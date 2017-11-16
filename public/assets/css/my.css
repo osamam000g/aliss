@@ -1,0 +1,20 @@
+.site-header.style1 .main-nav {
+    margin-right: 84px;
+}
+.site-header .main-nav {
+     float: right; 
+    margin-left: 30px;
+}
+.logo-container.hasInfoCard:before {
+    content: url(../images/hoverme.png);
+    width: 98px;
+    height: 35px;
+    right: 79%;
+    margin-right: 20px;
+    top: 20px;
+    position: absolute;
+}
+body .kl-ioscaption--style4 .more:before {
+    border-color: #cd2122;
+    background: rgb(205, 33, 34);
+}
