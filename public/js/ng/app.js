@@ -24,7 +24,30 @@ aliss.config(function($routeProvider , $locationProvider) {
     
 });
 
-aliss.controller('homeCTRL' , function(){console.log('homeCTRL'); });
+aliss.run(function($rootScope , $location) {
+    $rootScope.homeLoadCount = 0 ;
+    $rootScope.$on("$locationChangeStart", function(event, next, current) { 
+        if($location.path() == '/'){
+            $rootScope.homeLoadCount =   $rootScope.homeLoadCount+1 ;
+        console.log($rootScope.homeLoadCount);
+            
+        }
+    });
+});
+aliss.controller('indexCTRL' , function($scope , $rootScope){
+    console.log('indexCTRL');    
+});
+aliss.controller('homeCTRL' , function($scope , $rootScope , $location , $timeout){
+    console.log('homeCTRL');
+    $rootScope.hideViewIndex = 'show';  
+    if($rootScope.homeLoadCount == 1){
+        console.log('fist tim load');
+        $timeout(function(){
+      $location.path('/c')
+//                $location.path('/');
+        },2);
+    }
+});
 aliss.controller('productCTRL' , function(){console.log('productCTRL'); });
 aliss.controller('industryCTRL' , function(){console.log('industryCTRL'); });
 aliss.controller('applicationCTRL' , function(){console.log('applicationCTRL'); });

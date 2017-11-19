@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en-US">
+<html class="no-js" lang="en-US"   ng-app="aliss"  >
 <head>
 
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -11,6 +11,17 @@
 	<title>ALISS</title>
 
 	<!--  Desktop Favicons  -->
+	<style>
+        .ng-home-view{
+            display: none !important
+        }
+        .cloak1{
+            display: none;
+        }
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak  {
+          display: none !important;
+        }
+    </style>
 <!--	<link rel="icon" type="image/png" href="assets/images/favicons/favicon-16x16.png" sizes="16x16">-->
 	<link rel="stylesheet" href="assets/css/bootstrap.css" type="text/css" media="all">
   
@@ -32,10 +43,10 @@
     <script src="assets/owlcarousel/owl.carousel.js"></script>
 </head>
 
-<body ng-app="aliss">
+<body   ng-controller="indexCTRL">
 
 	<!-- Page Wrapper -->
-	<div id="page_wrapper">
+	<div id="page_wrapper" class="cloak1"  ng-class="hideViewIndex">
 		<div id="dp-js-header-helper" style="height:0 !important; display:none !important;"></div>
 <!-- Header style 1 -->
 <header id="header" class="site-header style1 cta_button">
